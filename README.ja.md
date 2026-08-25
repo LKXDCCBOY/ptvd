@@ -4,7 +4,7 @@
 
 FFmpeg.wasm をベースにしたブラウザ完結型の動画処理ツールです。サーバーの計算リソースは不要で、すべての動画処理はローカルで完結します。
 
-## ✨ 主な機能
+## 主な機能
 
 - **完全フロントエンド** — FFmpeg.wasm により、すべての動画処理はブラウザ内で完結。バックエンドサーバー不要。
 - **複数ファイル結合** — 複数の動画ファイルをアップロードし、concat filter コマンドを自動生成。入力数に応じてインテリジェントに調整。
@@ -15,7 +15,7 @@ FFmpeg.wasm をベースにしたブラウザ完結型の動画処理ツール�
 - **クロスオリジン分離** — COOP/COEP ヘッダーを自動設定し、SharedArrayBuffer をサポート。
 - **コマンドセーフティフィルター** — 危険なコマンド（ファイル削除、ネットワークリクエスト等）を自動検出・ブロック。
 
-## 🚀 クイックスタート
+## クイックスタート
 
 ### 前提条件
 
@@ -40,7 +40,7 @@ npm run preview
 
 開発サーバーはデフォルトで `http://localhost:5173/` で起動します。
 
-## 📦 デプロイ
+## デプロイ
 
 ### Cloudflare Pages（推奨）
 
@@ -54,7 +54,16 @@ npx wrangler pages deploy dist --project-name ptvd
 
 > **注意:** `functions/middleware.js` が COOP/COEP ヘッダーを自動挿入し、SharedArrayBuffer をサポートします。
 
-## 🔧 技術スタック
+### その他の静的ホスティング
+
+サーバーに以下の HTTP レスポンスヘッダーを設定してください:
+
+```
+Cross-Origin-Opener-Policy: same-origin
+Cross-Origin-Embedder-Policy: require-corp
+```
+
+## 技術スタック
 
 - **フレームワーク:** React 18 + TypeScript
 - **ビルドツール:** Vite 5
@@ -63,6 +72,6 @@ npx wrangler pages deploy dist --project-name ptvd
 - **スタイル:** Tailwind CSS + shadcn/ui
 - **デプロイ:** Cloudflare Pages
 
-## 📄 ライセンス
+## ライセンス
 
 MIT License

@@ -4,7 +4,7 @@
 
 A browser-based video processing tool powered by FFmpeg.wasm. All video processing happens locally — no server compute required.
 
-## ✨ Features
+## Features
 
 - **Pure Frontend** — Powered by FFmpeg.wasm, all video processing runs in the browser. No backend server needed.
 - **Multi-File Concatenation** — Upload multiple videos, auto-generate concat filter commands with intelligent input count matching.
@@ -15,7 +15,7 @@ A browser-based video processing tool powered by FFmpeg.wasm. All video processi
 - **Cross-Origin Isolation** — Auto-configures COOP/COEP headers for SharedArrayBuffer support.
 - **Command Safety Filter** — Built-in detection blocks dangerous commands (file deletion, network requests, etc.).
 
-## 🚀 Quick Start
+## Quick Start
 
 ### Prerequisites
 
@@ -40,7 +40,7 @@ npm run preview
 
 Dev server runs at `http://localhost:5173/` by default.
 
-## 📦 Deployment
+## Deployment
 
 ### Cloudflare Pages (Recommended)
 
@@ -66,11 +66,11 @@ Cross-Origin-Embedder-Policy: require-corp
 ### Custom Domain on Cloudflare
 
 If using a custom domain:
-1. Disable **Rocket Loader** (Speed → Optimization)
-2. Disable **Auto Minify** (Speed → Optimization)
+1. Disable **Rocket Loader** (Speed -> Optimization)
+2. Disable **Auto Minify** (Speed -> Optimization)
 3. Ensure `functions/middleware.js` is deployed
 
-## 🏗 Project Structure
+## Project Structure
 
 ```
 ptvd/
@@ -101,7 +101,7 @@ ptvd/
 └── vite.config.ts               # Vite config (CDN proxy, headers)
 ```
 
-## 🎯 Multi-File Concatenation
+## Multi-File Concatenation
 
 ### Upload Multiple Files
 
@@ -122,18 +122,18 @@ The system automatically:
 - Adds `-map "[outv]" -map "[outa]"` output mapping
 - Generates `filelist.txt` (demuxer mode)
 
-## 🌐 Multilingual Support
+## Multilingual Support
 
 | Language | Code | Status |
 |----------|------|--------|
-| 简体中文 | `zh` | ✅ Complete |
-| English | `en` | ✅ Complete |
-| 日本語 | `ja` | ✅ Complete |
-| Русский | `ru` | ✅ Complete |
-| Deutsch | `de` | ✅ Complete |
-| Français | `fr` | ✅ Complete |
+| 简体中文 | `zh` | Complete |
+| English | `en` | Complete |
+| 日本語 | `ja` | Complete |
+| Русский | `ru` | Complete |
+| Deutsch | `de` | Complete |
+| Français | `fr` | Complete |
 
-## 🔧 Tech Stack
+## Tech Stack
 
 - **Framework:** React 18 + TypeScript
 - **Build Tool:** Vite 5
@@ -142,10 +142,10 @@ The system automatically:
 - **Styling:** Tailwind CSS + shadcn/ui
 - **Deployment:** Cloudflare Pages
 
-## 📄 License
+## License
 
 MIT License
 
-## 🤝 Contributing
+## Contributing
 
 Issues and Pull Requests welcome.

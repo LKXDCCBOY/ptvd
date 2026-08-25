@@ -4,7 +4,7 @@
 
 一个基于 FFmpeg.wasm 的纯浏览器端视频处理工具，无需服务器算力，所有视频处理均在本地完成。
 
-## ✨ 功能特性
+## 功能特性
 
 - **纯前端运行** — 基于 FFmpeg.wasm，所有视频处理在浏览器中完成，无需后端服务器
 - **多文件拼接** — 支持上传多个视频文件，自动生成 concat filter 命令，智能匹配输入数量
@@ -15,7 +15,7 @@
 - **跨域隔离** — 自动配置 COOP/COEP 安全头，确保 SharedArrayBuffer 正常运行
 - **安全命令过滤** — 内置安全检测，拦截危险命令（如删除文件、网络请求等）
 
-## 🚀 快速开始
+## 快速开始
 
 ### 环境要求
 
@@ -40,7 +40,7 @@ npm run preview
 
 开发服务器默认运行在 `http://localhost:5173/`。
 
-## 📦 部署
+## 部署
 
 ### Cloudflare Pages（推荐）
 
@@ -70,7 +70,7 @@ Cross-Origin-Embedder-Policy: require-corp
 2. 关闭 **Auto Minify**（Speed → Optimization）
 3. 确保 **`functions/middleware.js`** 正常部署
 
-## 🏗 项目结构
+## 项目结构
 
 ```
 ptvd/
@@ -105,7 +105,7 @@ ptvd/
 └── vite.config.ts                   # Vite 配置（CDN 代理、安全头）
 ```
 
-## 🎯 多文件拼接使用指南
+## 多文件拼接使用指南
 
 ### 上传多个文件
 
@@ -126,18 +126,18 @@ ptvd/
 - 补齐 `-map "[outv]" -map "[outa]"` 输出映射
 - 生成 `filelist.txt`（demuxer 模式）
 
-## 🌐 多语言支持
+## 多语言支持
 
 | 语言 | 代码 | 状态 |
 |------|------|------|
-| 简体中文 | `zh` | ✅ 完整 |
-| English | `en` | ✅ 完整 |
-| 日本語 | `ja` | ✅ 完整 |
-| Русский | `ru` | ✅ 完整 |
-| Deutsch | `de` | ✅ 完整 |
-| Français | `fr` | ✅ 完整 |
+| 简体中文 | `zh` | 完整 |
+| English | `en` | 完整 |
+| 日本語 | `ja` | 完整 |
+| Русский | `ru` | 完整 |
+| Deutsch | `de` | 完整 |
+| Français | `fr` | 完整 |
 
-## 🔧 技术栈
+## 技术栈
 
 - **前端框架：** React 18 + TypeScript
 - **构建工具：** Vite 5
@@ -146,10 +146,10 @@ ptvd/
 - **样式：** Tailwind CSS + shadcn/ui
 - **部署平台：** Cloudflare Pages
 
-## 📄 许可证
+## 许可证
 
 MIT License
 
-## 🤝 贡献
+## 贡献
 
 欢迎提交 Issue 或 Pull Request。
