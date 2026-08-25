@@ -74,4 +74,4 @@ Cross-Origin-Embedder-Policy: require-corp
 
 ## Lizenz
 
-MIT License
+GNU General Public License v3.0

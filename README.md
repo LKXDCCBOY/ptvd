@@ -148,7 +148,7 @@ ptvd/
 
 ## 许可证
 
-MIT License
+GNU General Public License v3.0
 
 ## 贡献
 
