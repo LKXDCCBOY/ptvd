@@ -26,3 +26,13 @@ npm-debug.log*
 
 # 临时文件
 *.tmp
+
+# 本地开发脚本
+start.bat
+check_ffmpeg.js
+
+# Trae 内部文档
+.trae/
+
+# 其他平台配置（仅用 Cloudflare Pages）
+netlify.toml
