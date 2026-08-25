@@ -1,0 +1,5 @@
+# 静态资源 - 直接服务，不重定向
+/assets/*  /assets/:splat  200
+
+# SPA 回退 - 所有其他路由返回 index.html
+/*  /index.html  200
