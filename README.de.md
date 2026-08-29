@@ -40,28 +40,16 @@ npm run preview
 
 Dev-Server läuft standardmäßig auf `http://localhost:5173/`.
 
-## Bereitstellung
+## HTTP-Header-Konfiguration
 
-### Cloudflare Pages (Empfohlen)
-
-1. Build: `npm run build`
-2. Verzeichnis `dist/` auf Cloudflare Pages hochladen
-3. Oder Wrangler CLI verwenden:
-
-```bash
-npx wrangler pages deploy dist --project-name ptvd
-```
-
-> **Hinweis:** `functions/middleware.js` injiziert automatisch COOP/COEP-Header für SharedArrayBuffer-Unterstützung.
-
-### Andere statische Hosts
-
-Stellen Sie sicher, dass der Server folgende HTTP-Response-Header setzt:
+`functions/middleware.js` injiziert automatisch folgende Sicherheits-Header für SharedArrayBuffer-Unterstützung:
 
 ```
 Cross-Origin-Opener-Policy: same-origin
 Cross-Origin-Embedder-Policy: require-corp
 ```
+
+Bei Verwendung anderer statischer Hosts stellen Sie sicher, dass der Server die obigen HTTP-Response-Header setzt.
 
 ## Tech-Stack
 

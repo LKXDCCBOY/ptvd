@@ -40,35 +40,16 @@ npm run preview
 
 开发服务器默认运行在 `http://localhost:5173/`。
 
-## 部署
+## 请求头配置
 
-### Cloudflare Pages（推荐）
-
-1. 构建生产版本：`npm run build`
-2. 将 `dist/` 目录上传到 Cloudflare Pages
-3. 或使用 Wrangler CLI：
-
-```bash
-npx wrangler pages deploy dist --project-name ptvd
-```
-
-> **注意：** `functions/middleware.js` 会自动注入 COOP/COEP 安全头，确保 FFmpeg.wasm 的 SharedArrayBuffer 正常运行。
-
-### 其他静态托管
-
-确保服务器配置以下 HTTP 响应头：
+`functions/middleware.js` 会自动注入以下安全头，确保 FFmpeg.wasm 的 SharedArrayBuffer 正常运行：
 
 ```
 Cross-Origin-Opener-Policy: same-origin
 Cross-Origin-Embedder-Policy: require-corp
 ```
 
-### 自定义域名注意事项
-
-如果在 Cloudflare 上使用自定义域名：
-1. 关闭 **Rocket Loader**（Speed → Optimization）
-2. 关闭 **Auto Minify**（Speed → Optimization）
-3. 确保 **`functions/middleware.js`** 正常部署
+如果使用其他静态托管平台，请确保服务器配置上述 HTTP 响应头。
 
 ## 项目结构
 

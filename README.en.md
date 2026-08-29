@@ -40,35 +40,16 @@ npm run preview
 
 Dev server runs at `http://localhost:5173/` by default.
 
-## Deployment
+## HTTP Header Configuration
 
-### Cloudflare Pages (Recommended)
-
-1. Build: `npm run build`
-2. Upload the `dist/` directory to Cloudflare Pages
-3. Or use Wrangler CLI:
-
-```bash
-npx wrangler pages deploy dist --project-name ptvd
-```
-
-> **Note:** `functions/middleware.js` automatically injects COOP/COEP security headers for SharedArrayBuffer support.
-
-### Other Static Hosts
-
-Ensure your server sets these HTTP response headers:
+`functions/middleware.js` automatically injects the following security headers for SharedArrayBuffer support:
 
 ```
 Cross-Origin-Opener-Policy: same-origin
 Cross-Origin-Embedder-Policy: require-corp
 ```
 
-### Custom Domain on Cloudflare
-
-If using a custom domain:
-1. Disable **Rocket Loader** (Speed -> Optimization)
-2. Disable **Auto Minify** (Speed -> Optimization)
-3. Ensure `functions/middleware.js` is deployed
+If using other static hosting platforms, ensure your server sets the above HTTP response headers.
 
 ## Project Structure
 

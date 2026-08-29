@@ -40,28 +40,16 @@ npm run preview
 
 Дев-сервер запускается на `http://localhost:5173/` по умолчанию.
 
-## Развертывание
+## Настройка HTTP-заголовков
 
-### Cloudflare Pages (Рекомендуется)
-
-1. Сборка: `npm run build`
-2. Загрузите каталог `dist/` в Cloudflare Pages
-3. Или используйте Wrangler CLI:
-
-```bash
-npx wrangler pages deploy dist --project-name ptvd
-```
-
-> **Примечание:** `functions/middleware.js` автоматически внедряет заголовки COOP/COEP для поддержки SharedArrayBuffer.
-
-### Другие статические хостинги
-
-Убедитесь, что сервер устанавливает следующие HTTP-заголовки:
+`functions/middleware.js` автоматически внедряет следующие заголовки для поддержки SharedArrayBuffer:
 
 ```
 Cross-Origin-Opener-Policy: same-origin
 Cross-Origin-Embedder-Policy: require-corp
 ```
+
+При использовании других статических хостингов убедитесь, что сервер устанавливает указанные HTTP-заголовки.
 
 ## Технологии
 

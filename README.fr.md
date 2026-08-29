@@ -40,28 +40,16 @@ npm run preview
 
 Le serveur de développement démarre sur `http://localhost:5173/` par défaut.
 
-## Déploiement
+## Configuration des en-têtes HTTP
 
-### Cloudflare Pages (Recommandé)
-
-1. Build : `npm run build`
-2. Téléversez le répertoire `dist/` sur Cloudflare Pages
-3. Ou utilisez Wrangler CLI :
-
-```bash
-npx wrangler pages deploy dist --project-name ptvd
-```
-
-> **Note :** `functions/middleware.js` injecte automatiquement les en-têtes COOP/COEP pour le support de SharedArrayBuffer.
-
-### Autres hébergements statiques
-
-Assurez-vous que le serveur définit ces en-têtes HTTP :
+`functions/middleware.js` injecte automatiquement les en-têtes de sécurité suivants pour le support de SharedArrayBuffer :
 
 ```
 Cross-Origin-Opener-Policy: same-origin
 Cross-Origin-Embedder-Policy: require-corp
 ```
+
+Si vous utilisez d'autres hébergements statiques, assurez-vous que le serveur définit les en-têtes HTTP ci-dessus.
 
 ## Stack technique
 

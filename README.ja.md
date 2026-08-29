@@ -40,28 +40,16 @@ npm run preview
 
 開発サーバーはデフォルトで `http://localhost:5173/` で起動します。
 
-## デプロイ
+## HTTP ヘッダー設定
 
-### Cloudflare Pages（推奨）
-
-1. ビルド: `npm run build`
-2. `dist/` ディレクトリを Cloudflare Pages にアップロード
-3. または Wrangler CLI を使用:
-
-```bash
-npx wrangler pages deploy dist --project-name ptvd
-```
-
-> **注意:** `functions/middleware.js` が COOP/COEP ヘッダーを自動挿入し、SharedArrayBuffer をサポートします。
-
-### その他の静的ホスティング
-
-サーバーに以下の HTTP レスポンスヘッダーを設定してください:
+`functions/middleware.js` が以下のセキュリティヘッダーを自動挿入し、SharedArrayBuffer をサポートします:
 
 ```
 Cross-Origin-Opener-Policy: same-origin
 Cross-Origin-Embedder-Policy: require-corp
 ```
+
+その他の静的ホスティングを使用する場合は、サーバーに上記の HTTP レスポンスヘッダーを設定してください。
 
 ## 技術スタック
 
